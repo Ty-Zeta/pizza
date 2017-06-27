@@ -30,5 +30,4 @@ x.times do
   puts veggies
   puts
 end
-
-puts "Total cost is $#{x * 10.06.round(2)}"
+puts "Total cost is $#{'%.2f' %(x * 10.06)}"
