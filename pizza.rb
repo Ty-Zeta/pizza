@@ -19,7 +19,6 @@ end
 p "How many $10 pizzas would you like?"
   x = gets.chomp.to_i
 count = 0
-pizza_price = (10 * x)
 x.times do
   p "Pizza #{count+1}"
   count +=1
@@ -32,4 +31,4 @@ x.times do
   puts
 end
 
-puts "Total cost is $#{pizza_price}."
+puts "Total cost is $#{x * 10.06.round(2)}"
