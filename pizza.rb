@@ -54,8 +54,13 @@ x.times do
 end
 if y_del == "Yes"
   puts "The delivery charge is $3.00."
-tip_charge = time
-puts tip_charge
+  tip_charge = time
+  del_charge = 3
+  puts tip_charge
+    elsif y_del == "No"
+      tip_charge = 0
+      del_charge = 0
+      puts "There is no delivery charge."
 end
       if tip_charge == "15-20 min"
         tip_charge = 7
@@ -64,20 +69,12 @@ end
         tip_charge = 5
         puts "Your tip is $#{tip_charge}."
       elsif tip_charge == "31-45 min"
-        tip_charge = 2
+        tip_charge = 3
         puts "Your tip is $#{tip_charge}."
       elsif tip_charge == "46-60 min"
         tip_charge = 0
         puts "Your tip is $#{tip_charge}."
       end
-      total_charge = "(#{cost} * 1.06) + (#{tip_charge} + 3)"
-      puts "Total cost is $#{total_charge}"
-      puts 
-# if y_del == "Yes"
-#   then "cost + 3"
-# end
-# total_cost = "#{cost * 1.06}"
-# total_del = "#{tip_charge + 3}"
-# total_charge = "#{total_cost} + #{tip_charge}"
-#  puts "Total cost is $#{total_charge}"
-# puts
+total_charge = "#{cost * 1.06 + tip_charge + del_charge}"
+puts "Total cost is $#{'%.2f' %total_charge}"
+puts
