@@ -1,23 +1,33 @@
-def size
+def size()
   size = ["small", "medium", "large" ].sample
 end
-def crust
+def crust()
   crust = ["thin", "pan", "brooklyn"].sample
 end
-def cheese
+def cheese()
   cheese = ["no cheese", "light cheese", "cheese", "extra cheese"].sample
 end
-def sauce
-  sauce = ["regular sause", "marinara sause", "BBQ sause", "alfredo sause"].sample
+def sauce()
+  sauce = ["regular sauce", "marinara sauce", "BBQ sauce", "alfredo sauce"].sample
 end
-def meat
+def meat()
   meat = ["pepperoni", "bacon", "ham", "no meat"].sample
 end
-def veggies
+def veggies()
   veggies = ["pineapple", "mushrooms", "peppers", "no veggies"].sample
 end
+def time()
+  time = ["15-20 min", "21-30 min", "31-45 min", "46-60 min"].sample
+end
+def del()
+  delivery = ["Yes", "No"].sample
+end
+y_del = del
+p "Is this for delivery?"
+  puts y_del
 p "How many pizzas would you like?"
   x = gets.chomp.to_i
+  puts
 count = 1
 cost = 0
 x.times do
@@ -42,4 +52,32 @@ x.times do
     end
   puts
 end
-puts "Total cost is $#{'%.2f' %(cost * 1.06)}"
+if y_del == "Yes"
+  puts "The delivery charge is $3.00."
+tip_charge = time
+puts tip_charge
+end
+      if tip_charge == "15-20 min"
+        tip_charge = 7
+        puts "Your tip is $#{tip_charge}."
+      elsif tip_charge == "21-30 min"
+        tip_charge = 5
+        puts "Your tip is $#{tip_charge}."
+      elsif tip_charge == "31-45 min"
+        tip_charge = 2
+        puts "Your tip is $#{tip_charge}."
+      elsif tip_charge == "46-60 min"
+        tip_charge = 0
+        puts "Your tip is $#{tip_charge}."
+      end
+      total_charge = "(#{cost} * 1.06) + (#{tip_charge} + 3)"
+      puts "Total cost is $#{total_charge}"
+      puts 
+# if y_del == "Yes"
+#   then "cost + 3"
+# end
+# total_cost = "#{cost * 1.06}"
+# total_del = "#{tip_charge + 3}"
+# total_charge = "#{total_cost} + #{tip_charge}"
+#  puts "Total cost is $#{total_charge}"
+# puts
